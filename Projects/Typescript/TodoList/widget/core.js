@@ -12,6 +12,6 @@ export function getControl(id) {
 
 export function removeControl(id) {
   controls = controls.filter(function (control) {
-    return controls.id !== id;
+    return control.id !== id;
   });
 }

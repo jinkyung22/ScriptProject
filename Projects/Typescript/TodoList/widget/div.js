@@ -5,14 +5,15 @@ import { removeControl } from "./core.js";
 function _createDiv(id, option) {
   var el = document.createElement("div");
   var children = [];
-  //el.id = id;
+  if (option.parent) {
+    option.parent.append(el);
+  }
 
   return {
     id: id,
     el: el,
-    append: function (control) {
-      el.append(control.el);
-      children.push(control);
+    append: function (child) {
+      el.append(child.el);
     },
     dispose: function () {
       children.forEach(function (child) {
@@ -21,6 +22,11 @@ function _createDiv(id, option) {
 
       el.remove();
       removeControl(id);
+    },
+    setStyle: function (styles) {
+      for (var prop in styles) {
+        this.el.style[prop] = styles[prop];
+      }
     },
   };
 }

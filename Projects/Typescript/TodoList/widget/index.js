@@ -18,5 +18,7 @@ window.Widget = {
   getList: function () {
     return this.listContents;
   },
-  getControl: getControl,
+  getControl: function (id) {
+    return document.getElementById(id);
+  },
 };

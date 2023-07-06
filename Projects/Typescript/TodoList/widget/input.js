@@ -3,7 +3,7 @@ import { removeControl } from "./core.js";
 
 function _createInput(id, option) {
   var el = document.createElement("input");
-
+  el.id = id;
   return {
     id: id,
     el: el,

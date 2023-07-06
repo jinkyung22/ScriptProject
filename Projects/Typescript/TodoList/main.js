@@ -1,8 +1,8 @@
 var todolist = [];
 
 // todolist랑 donelist 일단 전역에 선언(리로드해야되니깐)
-// var todolistControl
-// var donelistControl;
+var todolistControl;
+var donelistControl;
 
 function onClickSave() {
   var contentsEl = Widget.getControl("todoInput");
